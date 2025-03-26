@@ -46,4 +46,25 @@ let reversedSentence = sentence
 console.log(reversedSentence);
 
 console.log("EXERCISE 4:\n==========\n");
-console.log("EXERCISE 5:\n==========\n");
+
+//this is a loop that Parses a CSV string into an array of objects
+let csvContent = "name,age\nFrodo,50\nSam,38\nMerry,36\nPippin,26";
+
+let tableRows = csvContent.split("\n");
+let columnHeaders = tableRows[0].split(",");
+let parsedData = [];
+
+for (let rowIndex = 1; rowIndex < tableRows.length; rowIndex++) {
+    let rowValues = tableRows[rowIndex].split(",");
+    let rowObject = {};
+
+    columnHeaders.forEach((header, colIndex) => {
+        rowObject[header] = isNaN(rowValues[colIndex]) ? rowValues[colIndex] : Number(rowValues[colIndex]);
+    });
+
+    parsedData.push(rowObject);
+}
+
+console.log(parsedData);
+
+
