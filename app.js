@@ -32,3 +32,18 @@ book.info = function () {
 };
 
 console.log(book.info());
+
+console.log("EXERCISE 3:\n==========\n");
+
+//This is a function that takes a string and returns the string reversed.
+let sentence = "The quick brown fox jumps over the lazy dog";
+
+let reversedSentence = sentence
+    .split(" ")
+    .map((word) => word.split("").reverse().join(""))
+    .join(" ");
+
+console.log(reversedSentence);
+
+console.log("EXERCISE 4:\n==========\n");
+console.log("EXERCISE 5:\n==========\n");
